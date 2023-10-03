@@ -13,7 +13,7 @@ with open(budget_data, newline="") as csvfile:
     #csv reader specifies delimiter (parameter tells Python each comma within csv should be seen as moving into a new column for a row).
     csvreader = csv.reader(csvfile, delimiter=",") 
 
-    #Read the header row first (skip this step if there is now header) 
+    #Read the header row first 
     csv_header = next(csvreader)
     print(f"CSV Header: {csv_header}") 
 
@@ -23,7 +23,8 @@ Months = []
 Monthly_Change = []
 
 
-    #Read each row of data after the header
+    #Read each row of data after the header; int() function converts number or string into integer 
+    # int() = int(value, base [optional]) ; value parameter: any numberic-string, bytes-liek object or a number; base parameter: the number system the value is currently in
     for row in csvreader:
         Profit.append(int(rows [1])) 
         Months.append(rows[0])
