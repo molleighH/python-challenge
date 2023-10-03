@@ -5,7 +5,7 @@ import os
 
 # Import module for reading csv files & set correct path to csv files 
 import csv 
-budget_data = os.path.join("python-challge", "PyBank", "budget_data.csv")
+budget_data = os.path.join("PyBank", "budget_data.csv")
 
 #Translate csv opening in Python 
 with open(budget_data, newline="") as csvfile: 
