@@ -24,6 +24,7 @@ Monthly_Change = []
 
 
     #Read each row of data after the header; int() function converts number or string into integer 
+    # append() = method adds an item to the end of the list = list.append(item); append() is single arguement; item parameter: an item (number, sting, list, etc.) to be added at the end of the list 
     # int() = int(value, base [optional]) ; value parameter: any numberic-string, bytes-liek object or a number; base parameter: the number system the value is currently in
     for row in csvreader:
         Profit.append(int(rows [1])) 
