@@ -1,8 +1,8 @@
-#Module 3 Challenge: Python-Challenge 
+#Module 3 Challenge: Python-Challenge "\n"
 
 SOURCES
 
-Bootcamp Powerpoint Lectures,
+Bootcamp Powerpoint Lectures,"\n"
 Professor and TA answering questions during office hours, 
 Slack Questions & Answers 
 
