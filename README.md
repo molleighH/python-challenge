@@ -6,23 +6,24 @@ Bootcamp Powerpoint Lectures,
 Professor and TA answering questions during office hours,  
 Slack Questions & Answers  
 
-https://www.programiz.com/python-programming/methods/built-in/int
-https://www.w3schools.com/python/ref_func_len.asp
-https://realpython.com/python-append/
-https://www.programiz.com/python-programming/methods/list/append
-https://www.programiz.com/python-programming/methods/built-in/len
-https://python-reference.readthedocs.io/en/latest/docs/operators/addition_assignment.html
-https://careerkarma.com/blog/python-operator/
-https://www.programiz.com/python-programming/methods/list/index
-https://www.programiz.com/python-programming/methods/built-in/str
-https://www.datacamp.com/tutorial/f-string-formatting-in-python
-https://www.scaler.com/topics/python/how-to-write-a-file-in-python/
-https://www.idtech.com/blog/what-is-n-in-python
-https://www.programiz.com/python-programming/input-output-import#google_vignette
+https://www.programiz.com/python-programming/methods/built-in/int  
+https://www.w3schools.com/python/ref_func_len.asp  
+https://realpython.com/python-append/  
+https://www.programiz.com/python-programming/methods/list/append  
+https://www.programiz.com/python-programming/methods/built-in/len  
+https://python-reference.readthedocs.io/en/latest/docs/operators/addition_assignment.html  
+https://careerkarma.com/blog/python-operator/  
+https://www.programiz.com/python-programming/methods/list/index  
+https://www.programiz.com/python-programming/methods/built-in/str  
+https://www.datacamp.com/tutorial/f-string-formatting-in-python  
+https://www.scaler.com/topics/python/how-to-write-a-file-in-python/  
+https://www.idtech.com/blog/what-is-n-in-python  
+https://www.programiz.com/python-programming/input-output-import#google_vignette  
 
 
 
-PyBank Instructions
+PyBank Instructions  
+
 In this Challenge, you are tasked with creating a Python script to analyze the financial records of your company. You will be given a financial dataset called budget_data.csv. The dataset is composed of two columns: "Date" and "Profit/Losses".
 
 Your task is to create a Python script that analyzes the records to calculate each of the following values:
