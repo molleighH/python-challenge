@@ -1,51 +1,87 @@
-#First, import os module - allows to create file path across operating systems 
+#Import os module & module for reading CSVfiles 
 import os 
-
-#Import module for reading csv files & set correct path to csv files 
 import csv 
+
+#CSV File Path &  create object out of CSV File 
 budget_data = os.path.join("PyBank", "budget_data.csv")
 
-#Translate csv opening in Python 
-with open(budget_data, newline="") as csvfile: 
+Profits = [] 
+Dates = []
+Total_Months = 0
+Total_Profit = 0
+Value = 0 
+Change = 0 
 
-    #csv reader specifies delimiter (parameter tells Python each comma within csv should be seen as moving into a new column for a row).
-    csvreader = csv.reader(csvfile, delimiter=",") 
+#Open & read the CSV file 
+with open(budget_data, newline="") as csvfile:
+    cvsreader = csv.reader(csvfile, delimiter = ",")
 
-    #Read the header row first 
-    csv_header = next(csvreader)
-    print(f"CSV Header: {csv_header}") 
+    #Read the header row
+    csv_header = next(cvsreader)
 
-    #Set Variables  
-    Months = []
-    Profits = [] 
+    #Iterate through First Row & assign results to variable 
+    First_Row = next(cvsreader) 
+    Total_Months += 1 
+    Total_Profit += int(First_Row[1])
+    Value = int(First_Row[1])
 
-    #Read each row of data after the header
-    #append() = method adds an item to the end of the list = list.append(item); append() is single arguement; item parameter: an item (number, sting, list, etc.) to be added at the end of the list 
-    #int() = int(value, base [optional]) ; value parameter: any numberic-string, bytes-liek object or a number; base parameter: the number system the value is currently in
-    for row in csvreader:
-        Profit.append(int(rows [1])) 
-        Months.append(rows[0])
+    #Read through each row after header & first row 
+    for row in cvsreader: 
 
-    #Set Monthly_Change 
-    Monthly_Change = []
+        #Place holder
+        Dates.append(row[0])
 
-    #Find Monthly_Change
-    #len() + function returns the number of items (length) in an object = len(s); function takes a single arguement (s), which can be a sequence(= string, bytes, tuples, list, range) OR collection(= dictionary, set, frozen set) 
-    for x in range(1, len(Profit)):
-        Monthly_Change.append((int(Profit[x]) - int(Profit[x-1]))) 
+        #Calculate Change and then add to new list  
+        Change = int(row[1])-Value
+        Profits.append(Change)
+        Value = int(row[1])
 
-    #Calculate average monthly_change
-    Average_Monthly_Change = sum(Monthly_Change)/ len(Monthly_Change)
-    Monthly_Average = round(Average_Monthly_Change, 2)
+        #Calculate the Total Number of Months 
+        Total_Months += 1
+        Total_Months = len(Dates)
 
-    #Calculate total number of months included in the dataset 
-    Total_Months = len(Months)
+        #Calculate net amount of Profit over entire period 
+        Total_Profit = Total_Profit + int(row[1]) 
 
-    #Calculate greatest increase in Profit 
-    Greatest_Increase = max(Monthly_Change)
+    #Calculate Greatest increase in Profits (date and amount over entire period)
+    Greatest_Increase = max(Profits) 
+    Greatest_Index = Profits.index(Greatest_Increase)
+    Greatest_Date = Dates[Greatest_Index]
 
-    #Calculate greatest decrease in Profit 
-    Greatest_Decrease = min(Monthly_Change)
+    #Calculate Greatest decrease in Profits (date and amount over entire period)
+    Greatest_Decrease = min(Profits)
+    Lowest_Index = Profits.index(Greatest_Decrease)
+    Lowest_Date = Dates[Lowest_Index]
 
-    
+    #Calculate average Profit Change
+    Average_Profit_Change = sum(Profits)/len(Profits)
+
+#Print results 
+print("Financial Analysis")
+print("---------------------")
+print(f"Total Months: {str(Total_Months)}")
+print(f"Total : ${str(Total_Profit)}")
+print(f"Average Change: ${str(round(Average_Profit_Change, 2))}")
+print(f"Greatest Increase in Profits: {Greatest_Date} (${str(Greatest_Increase)})")
+print(f"Greatest Decrease in Profits: {Lowest_Date} (${str(Greatest_Decrease)})")
+
+#Specifiy the file to write to (tells ython the file to write to while assigning it to the variable output_path)
+output_path = os.path.join("PyBank", "analysis")
+
+#Open the file using "write" mode. Spicify the variabble to hold the contents (tells Python to open the file by using write mode, while holding the contents in output_path)
+with open(output_path, "w") as csvfile:
+
+    #Initialize csv.writer (tells Python that this application will write code into an external CSV file)
+    csvwriter = csv.writer(csvfile, delimiter=",")
+
+    #Write the first row (column headers) [csv.writerow is the code to write a new row into a CSV file]
+    csvwriter.writerow(["Financial Analysis"])
+
+    #Write the second row, etc 
+    csvwriter.writerow(["----------------------------"])
+    csvwriter.writerow(str(f"Total Months: {str(Total_Months)}"))
+    csvwriter.writerow(str(f"Total: ${str(Total_Profit)}"))
+    csvwriter.writerow(str(f"Average Change: ${str(round(Average_Profit_Change))}"))
+    csvwriter.writerow(str(f"Greatest Increase in Profits: {Greatest_Date} (${str(Greatest_Increase)})"))
+    csvwriter.writerow(str(f"Greatest Decrease in Profits: {Lowest_Date} (${str(Greatest_Decrease)})"))
     
