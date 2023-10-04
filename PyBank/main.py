@@ -72,7 +72,7 @@ output_path = os.path.join("PyBank", "analysis")
 with open(output_path, "w") as csvfile:
 
     #Initialize csv.writer (tells Python that this application will write code into an external CSV file)
-    csvwriter = csv.writer(csvfile, delimiter=",")
+    csvwriter = csv.writer(csvfile)
 
     #Write the first row (column headers) [csv.writerow is the code to write a new row into a CSV file]
     csvwriter.writerow(["Financial Analysis"])
