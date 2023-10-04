@@ -1,5 +1,3 @@
-#REMINDER: to create a folder in GitHub use "/" at the end of the folder name to transform into a folder
-
 #First, import os module - allows to create file path across operating systems 
 import os 
 
