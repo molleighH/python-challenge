@@ -3,8 +3,8 @@
 SOURCES
 
 Bootcamp Powerpoint Lectures,"\n"
-Professor and TA answering questions during office hours, 
-Slack Questions & Answers 
+Professor and TA answering questions during office hours, "\n"
+Slack Questions & Answers "\n"
 
 https://www.programiz.com/python-programming/methods/built-in/int
 https://www.w3schools.com/python/ref_func_len.asp
