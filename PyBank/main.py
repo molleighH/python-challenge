@@ -19,7 +19,7 @@ with open(budget_data, newline="") as csvfile:
     Months = []
     Profits = [] 
 
-    #Read each row of data after the header; int() function converts number or string into integer 
+    #Read each row of data after the header
     #append() = method adds an item to the end of the list = list.append(item); append() is single arguement; item parameter: an item (number, sting, list, etc.) to be added at the end of the list 
     #int() = int(value, base [optional]) ; value parameter: any numberic-string, bytes-liek object or a number; base parameter: the number system the value is currently in
     for row in csvreader:
@@ -38,4 +38,14 @@ with open(budget_data, newline="") as csvfile:
     Average_Monthly_Change = sum(Monthly_Change)/ len(Monthly_Change)
     Monthly_Average = round(Average_Monthly_Change, 2)
 
-    #Calculate 
+    #Calculate total number of months included in the dataset 
+    Total_Months = len(Months)
+
+    #Calculate greatest increase in Profit 
+    Greatest_Increase = max(Monthly_Change)
+
+    #Calculate greatest decrease in Profit 
+    Greatest_Decrease = min(Monthly_Change)
+
+    
+    
