@@ -19,15 +19,15 @@ with open(budget_data, newline="") as csvfile:
     #Read the header row
     csv_header = next(cvsreader)
 
-    #Iterate through First Row & assign results to variable 
-    First_Row = next(cvsreader) 
-    Total_Months += 1 
-    Total_Profit += int(First_Row[1])
-    Value = int(First_Row[1])
-
     #Read through each row after header & first row 
     for row in cvsreader: 
-
+    
+        #Iterate through First Row & assign results to variable 
+        First_Row = next(cvsreader) 
+        Total_Months += 1 
+        Total_Profit += int(First_Row[1])
+        Value = int(First_Row[1])
+        
         #Place holder
         Dates.append(row[0])
 
