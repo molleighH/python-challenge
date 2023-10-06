@@ -19,14 +19,14 @@ with open(budget_data, newline="") as csvfile:
     #Read the header row
     csv_header = next(cvsreader)
 
+    #Iterate through First Row & assign results to variable 
+    First_Row = next(cvsreader) 
+    Total_Months += 1
+    Total_Profit += int(First_Row[1])
+    Value = int(First_Row[1])
+
     #Read through each row after header & first row 
     for row in cvsreader: 
-    
-        #Iterate through First Row & assign results to variable 
-        First_Row = next(cvsreader) 
-        Total_Months += 1 
-        Total_Profit += int(First_Row[1])
-        Value = int(First_Row[1])
         
         #Place holder
         Dates.append(row[0])
@@ -37,8 +37,8 @@ with open(budget_data, newline="") as csvfile:
         Value = int(row[1])
 
         #Calculate the Total Number of Months 
-        Total_Months += 1
         Total_Months = len(Dates)
+        Total_Months += 1
 
         #Calculate net amount of Profit over entire period 
         Total_Profit = Total_Profit + int(row[1]) 
@@ -84,4 +84,3 @@ with open(output_path, "w") as csvfile:
     csvwriter.writerow(str(f"Average Change: ${str(round(Average_Profit_Change))}"))
     csvwriter.writerow(str(f"Greatest Increase in Profits: {Greatest_Date} (${str(Greatest_Increase)})"))
     csvwriter.writerow(str(f"Greatest Decrease in Profits: {Lowest_Date} (${str(Greatest_Decrease)})"))
-    
