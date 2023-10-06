@@ -5,16 +5,10 @@ import csv
 #CSV File Path &  create object out of CSV File 
 election_data = os.path.join("PyPoll", "election_data.csv")
 
-#Capture Candidates in a list 
+#Capture Candidates in a list, #  of votes per Candidate, percentage of total votes each Candidate wins, total number of votes 
 Candidates = []
-
-#Capture the # of votes each Candidate wins in a list 
 Vote_Count = []
-
-#Capture the percentage of total votes each Candidate wins in a list 
 Vote_Percentage = []
-
-#Counter for total number of votes 
 Total_Votes = 0 
 
 #Open & read CSV file 
